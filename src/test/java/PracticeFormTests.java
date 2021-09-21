@@ -64,21 +64,7 @@ public class PracticeFormTests {
     $(By.xpath("//tr/td[text()='Picture']/following-sibling::td")).shouldHave(text(photoName));
     $(By.xpath("//tr/td[text()='Address']/following-sibling::td")).shouldHave(text(currentAddress));
     $(By.xpath("//tr/td[text()='State and City']/following-sibling::td")).shouldHave(text(state+" "+city));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   }
+
 
 }
