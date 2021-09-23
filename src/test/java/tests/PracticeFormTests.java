@@ -1,3 +1,5 @@
+package tests;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
@@ -12,7 +14,7 @@ import org.openqa.selenium.Keys;
 public class PracticeFormTests {
   @Test
   void testFillPracticeForm(){
-    String fistName = "Roman";
+    String firstName = "Roman";
     String lastName = "Foorman";
     String eMail = "asd@asd.com";
     String mobile = "1234567890";
@@ -31,7 +33,8 @@ public class PracticeFormTests {
 
     Configuration.startMaximized=true;
     open("https://demoqa.com/automation-practice-form");
-    $("#firstName").setValue(fistName);
+    $("#firstName").val(firstName);
+    $("#firstName").val();
     $("#lastName").setValue(lastName);
     $("#userEmail").setValue(eMail);
     $(By.xpath("//label[text()='Male']")).click();
@@ -51,10 +54,11 @@ public class PracticeFormTests {
     $("#city").click();
     $(By.xpath("//*[text()='"+city+"']")).click();
     $("#submit").click();
+    $("#submit").
 
 
     //Assertions
-    $(By.xpath("//tr/td[text()='Student Name']/following-sibling::td")).shouldHave(text(fistName+" "+lastName));
+    $(By.xpath("//tr/td[text()='Student Name']/following-sibling::td")).shouldHave(text(firstName+" "+lastName));
     $(By.xpath("//tr/td[text()='Student Email']/following-sibling::td")).shouldHave(text(eMail));
     $(By.xpath("//tr/td[text()='Gender']/following-sibling::td")).shouldHave(text(gender));
     $(By.xpath("//tr/td[text()='Mobile']/following-sibling::td")).shouldHave(text(mobile));
